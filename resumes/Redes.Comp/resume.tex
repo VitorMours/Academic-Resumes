@@ -1,0 +1,130 @@
+\documentclass[12pt a4paper]{paper}
+\usepackage{array}
+
+\begin{document} 
+\section{Protocolos e Modelos} % (fold)
+\label{sec:Protocolos e Modelos}
+\subsection{Fundamentos da Comunicação} % (fold)
+\label{sub:Fundamentos da Comunicação}
+As redes variam em tamanho, forma e função. Elas podem ser tão complexas quanto os 
+dispositivos conectados, ou tão simples quanto dois computadores conectados diretamente
+um ao outro com um único cabo e qualquer outra coisa.
+As pessoas trocam ideias usando vários métodos de comunicação diferentes. No entanto, 
+todos os métodos de comunicação têm os seguintes três elementos em comum:
+
+\begin{itemize}
+  \item \textbf{Fonte da Mensagem: } As fontes da mensagem são pessoas ou dispositivos eletrônicos que precisam enviar uma mensagem para outro lugar.
+  \item \textbf{Destino da Mensagem: }O destino recebe a mensaem e a interpreta.
+  \item \textbf{Canal: }Consiste na mídia que fornece o caminho pelo qual a mensagem viaja da oridem ao destino.
+\end{itemize}
+% subsection Fundamentos da Comunicação (end)
+
+\subsection{Protocolos de Comunicação} % (fold)
+\label{sub:Protocolos de Comunicação}
+O envio da mensagem, é regido por regras que são chamadas de protocolos. 
+Esses protocolos são específicos ao tipo de método de comunicação que estão sendo usado.
+Em nossa comunicação pessoal do dia-a-dia, as regras que usamos para nos comunicar 
+em uma mídia.
+% subsection Protocolos de Comunicação (end)
+
+\subsection{Requisitos de protocolo de rede} % (fold)
+\label{sub:Requisitos de protocolo de rede}
+Os protocolos usado nas comunicações de rede compartilham muitas dessas características
+fundamentais. Além de identificar a origem e o destino, os protocolos de computadores e 
+de redes definem os detalhes sobre como uma mensagem é trnasmitida por uma rede. 
+Eles possuem os seguintes requisitos:
+
+\begin{itemize}
+  \item Codificação de mensagens.
+  \item Formatação e encapsulamento de mensagens. 
+  \item Tamanho da mensagem. 
+  \item Tempo da mensagem. 
+  \item Opção de envio de mensagem.
+\end{itemize}
+% subsection Requisitos de protocolo de rede (end)
+
+\subsection{Codificação de Mensagens} % (fold)
+\label{sub:Codificação de Mensagens}
+Uma das primeiras etapas para enviar uma mensagem, é codificar ela. A codificação é o 
+processo de conversão de informações em outra forma aceitável para a transmissão. A 
+decodificação reverte esse processo para interpretar as informações.
+% subsection Codificação de Mensagens (end)
+
+\subsection{Formatação e Encapsulamento de Mensagens} % (fold)
+\label{sub:Formatação e Encapsulamento de Mensagens}
+Quando uma mensagem é enviada da origem para o destino, deve usar um formato e 
+estrutura específica, para que seu uso seja o mais eficiente possível. Dentro da rede, 
+isso se transforma com o uso de IP, como uma função de localização para identificar a 
+origem e o destino da mensagem.
+% subsection Formatação e Encapsulamento de Mensagens (end)
+
+\subsection{Tamanho da Mensagem} % (fold)
+\label{sub:Tamanho da Mensagem}
+Quando uma mensagem é muita longa, para ela ser enviada de um host para o outro, é 
+necessário dividir a mensagem em partes menores, pois isso facilita o transporte e a 
+detecção de possíveis falhas dentro da nossa comunicação
+
+
+
+
+% subsection Tamanho da Mensagem (end)
+
+\subsection{Temporização da Mensagem} % (fold)
+\label{sub:Temporização da Mensagem}
+O tempo que as mensagens possuem de vida também é extremamente importante, e isso é 
+controlado por meio de três elementos que estão presente, sendo eles: 
+
+\begin{itemize}
+  \item \textbf{Controle de Fluxo: } É o processo de gerenciamento  da taxa de transmissão dos dados. o controle define quanta informação pode ser enviada e a velocidade com que pode ser entrege.
+  \item \textbf{Tempo limite de resposta: } Se uma pessoa fizer uma pergunta e nçao ouvir uma resposta dentro de um período aceitável de tempo, entende que a resposta nunca deve chegar, o mesmo funciona para os computadores. Os hosts da rede usam protocolos de rede e especificam quanto tempo de espera pode ser ofertado para que uma ação seja executada.
+  \item \textbf{Método de Acesso: } Ajuda a determinar quando alguém pode enviar uma mensagem. Quando um dispositivo deseja transmitir uma mensagem, sendo por fio ou sem fio, deve existir um tipo de conecção, podendo ser ela por LAN ou WLAN, respectivamente.
+\end{itemize}
+% subsection Temporização da Mensagem (end)
+
+\subsection{Visão geral dos protocolos} % (fold)
+\label{sub:Visão geral dos protocolos}
+Os protocolos de rede definem um formato comum e um conjunto de regras para a troca 
+de mensagens entre dispositivos. Os protocolos são implementados por dispositivos 
+finais e dispositivos intermediários em software, hardware e ambos.
+
+Os protocolos são diversos, e cada um deles atende a uma necessidade específica, sendo 
+eles os seguintes para cada local de atuação do mesmo: 
+
+\begin{itemize}
+  \item \textbf{Protocolos de comunicação em rede: } Permitem que dois ou mais dispositivos se comuniquem através de um ou mais redes, são usados os IP, TCP e HTTP. 
+  \item \textbf{Protocolos de segurança de rede: }Protegem os dados para fornecer autenticação, integridade dos dados e criptografia, alguns deles são: SSH, TLS e SSL. 
+  \item \textbf{Protocolos de roteamento: } permitem que os roteadores troquem informações de rota, compare caminhos e selecionar a melhor rota até o destino, alguns exemplos são o OSPF e BGP. 
+  \item \textbf{Protocolos de descoberta de serviços: } São usados para a detecção automática de dispositivos ou serviços, os mais famosos são DHCP e DNS.
+\end{itemize}
+% subsection Visão geral dos protocolos (end)
+
+
+\section{Funções de protocolo de rede} % (fold)
+\label{sec:Funções de protocolo de rede}
+Os protocolos de comunicação são os responsáveis por uma variedade de funções 
+necessárias para a comunicação entre redes de dispositivos finais, temos o seguinte: 
+
+\begin{center}
+  \begin{tabular}{ | m{3cm} | m{7cm} |}
+\hline
+\textbf{Função} & \textbf{Descrição} \\
+\hline
+\textbf{Endereçamento} & Identifica  o remetente e o destinatário da mensagem, usando o endereço definido no esquema, que pode ser definido com protocolo ethernet, IPv4 ou IPv6\\
+\textbf{Confiabilidade} \\
+\textbf{Controle de Fluxo} \\
+\textbf{Sequenciamento} \\
+\textbf{Deetecção de Erros } \\
+\textbf{Interface de aplicação} \\
+\end{tabular}
+\end{center}
+
+
+% section Funções de protocolo de rede (end)
+
+
+
+
+% section Protocolos e Modelos (end)
+
+
+\end{document}
