@@ -1,0 +1,95 @@
+\documentclass[12pt, a4paper]{paper}
+
+\title{Técnicas básicas de grafos}
+\author{João Vitor Rezende Moura}
+\begin{document}
+
+\section{Infográfico} % (fold)
+\label{sec:Infográfico}
+\subsection{Coloração sequencial de grafos} % (fold)
+\label{sub:Coloração sequencial de grafos}
+A convenção do uso de cores em grafos se origina no seu uso para a coloração de países 
+em mapas. Em representações matemáticas e computacionais, é comum usar os primeiros
+números inteiros positivos ou não negativos como as cores. Em geral pode-se usar 
+qualquer conjunto finito de cores. A natureza do problema depende da quantidade das 
+cores, e não da sua natureza.
+% subsection Coloração sequencial de grafos (end)
+% section Infográfico (end)
+
+\section{Livro: Ordenação de elementos em grafos} % (fold)
+\label{sec:Livro: Ordenação de elementos em grafos}
+Uma aresta direcionada de um grafo é um par ordenado de vértices (u, v) representando
+uma conexão assimétrica de \textit{u} a \textit{v}. As arestas normais podem ter seu 
+comportamente repetido por meio de arestas bidirecionais, ou de duas arestas direcionais,
+cada uma delas ligando pro o outro elemento.
+
+Um grafo direcionado e sem ciclos é chamado de \textbf{grafo acíclico direcionado}, e 
+podem também ser chamados de DAGs. Eles possuem muitos recursos que os tornam mais 
+simples que os grafos. Para começar, sempre são dotados de vértices conhecidos como 
+fontes e sumidouros. Uma \textbf{fonte} é um vértice sem aresta de entrada; um 
+\textbf{sumidouro} é um vértice sem saída.
+
+\subsection{Ordenação topológica} % (fold)
+\label{sub:Ordenação topológica}
+A ordenação topológica funciona como uma ordenação natural das DAGs. E ela dá suporte a 
+um recurso visual de disposição de vértices e arestas do grafo, Para isso, é preciso 
+listar todas as fontes da esquerda para a direita e representar as arestas direcionadas 
+de G entre essas fontes. Na verdade, qualquer lsita de vértices é uma ordenação topológica se todas as arestas estiverem direcionadas até o fim da lista.
+
+\subsubsection{Algoritmo de ordenação Topológica} % (fold)
+\label{sec:Algoritmo de ordenação Topológica}
+Um dos algoritmos comumente empregados para a obtenção de uma ordem topológica de um 
+grafo faz uso de um procedimento de varredura, que o algoritmo de 
+\textbf{busca em profundidade.}
+Esse algoritmo possui uma estrutura de dados auxiliar para armazenar os vértices na 
+ordem em que a visitação de suas vizinhanças é finalizada. 
+\newline
+
+\texttt{\textbf{Algoritmo 1: Busca em profundidade (BP)}}
+\hrule
+%Corrigir essa parte destacada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\texttt{
+  para cada v ∈ V(G) faça 
+    v.status ← NOVO
+  fim para 
+
+  tempo ← 0 
+  pilhaVertices ← ∅
+  para cada v ∈ V(G) faça 
+    se v.status = NOVO entao
+      visitaBP(v, listaVertices)
+  fim se,para 
+  retorna listaVertices
+}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+
+
+
+% subsubsection Algoritmo de ordenação Topológica (end)
+% subsection Ordenação topológica (end)
+\subsection{Coloraçao em grafos} % (fold)
+\label{sub:Coloraçao em grafos}
+
+% subsection Coloraçao em grafos (end)
+
+% section Livro: Ordenação de elementos em grafos (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

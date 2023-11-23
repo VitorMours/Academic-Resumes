@@ -99,8 +99,8 @@ eles os seguintes para cada local de atuação do mesmo:
 % subsection Visão geral dos protocolos (end)
 
 
-\section{Funções de protocolo de rede} % (fold)
-\label{sec:Funções de protocolo de rede}
+\section{Protocolo de rede} % (fold)
+\label{sec:Protocolo de rede}
 Os protocolos de comunicação são os responsáveis por uma variedade de funções 
 necessárias para a comunicação entre redes de dispositivos finais, temos o seguinte: 
 
@@ -109,22 +109,223 @@ necessárias para a comunicação entre redes de dispositivos finais, temos o se
 \hline
 \textbf{Função} & \textbf{Descrição} \\
 \hline
-\textbf{Endereçamento} & Identifica  o remetente e o destinatário da mensagem, usando o endereço definido no esquema, que pode ser definido com protocolo ethernet, IPv4 ou IPv6\\
-\textbf{Confiabilidade} \\
-\textbf{Controle de Fluxo} \\
-\textbf{Sequenciamento} \\
-\textbf{Deetecção de Erros } \\
-\textbf{Interface de aplicação} \\
+\textbf{Endereçamento} & Identifica  o remetente e o destinatário da mensagem, usando o endereço definido no esquema, que pode ser definido com protocolo ethernet, IPv4 ou IPv6.\\
+\hline 
+\textbf{Sequenciamento} & Esta função rotula exclusivamente cada segmento de dados transmitidos, usando as informações de sequenciamento para remontar a informação corretamente.\\
+\hline
+\textbf{Deetecção de Erros } & Esta função é usada para determinar se os dados foram corrompidos durante a transmissão. Vários protocolos que fornecem detecção de erros incluem Ethernet, IPv4, IPV6 e TCP.\\
+\hline
+\textbf{Interface de aplicação} & Esta função contém informações usadas para processo a processo comunicações entre aplicações de rede.\\
+\hline
 \end{tabular}
 \end{center}
 
+\subsection{Interação de protocolos} % (fold)
+\label{sub:Interação de protocolos}
+Uma mensagem enviada através de uma rede de computadores normalmente requer o uso de 
+vários protocolos, cada um com suas próprias funções e formato. E cada um possui 
+a seguinte especificidade:
 
-% section Funções de protocolo de rede (end)
+\begin{itemize}
+  \item \textbf{Protocolo de Transferência de Hipertexto(HTTP): }Este protocolo controla a maneira como um servidor web e um cliente web interagem. Ele define o conteúdo e formato das solicitações e respostas trocadas entre o cliente e o servidor.  
+  \item \textbf{Transmission Control Protocol(TCP): } Este protocolo gerencia as conversas individuais, ele garante que a entrega é confiável dsa informações e gerenciar o controle de fluxo entre os dispositivos finais. 
+  \item \textbf{Protocolo Internet(IP): } Este protocolo é responsável por entregar mensagens do remetente para o receptor. IP e é usado por roteadores para encaminhar como mensagens em várias redes.
+  \item \textbf{Ethernet: }Entrega as mensagens de uma NIC para outra, na mesme rede local LAN.
+\end{itemize}
+% subsection Interação de protocolos (end)
+
+\subsection{Conjunto de protocolos de rede} % (fold)
+\label{sub:Conjunto de protocolos de rede}
+Os protocolos devem ser capazes de trabalhar com outros protocolos para que sua 
+experiência on-line lhe dê tudo oque precisa para comunicações de rede. Os conjuntos 
+de protocolo são projetados para trabalhar entre si sem problemas. Um conjunto de 
+protocolos é um grupo de protocolos inter-relacionados necessários para executar uma 
+função de comunicação. 
+
+Uma das melhores formas de entender como os protocolos interagem entre si, é o 
+entendimento de que eles funcionam como se fosse uma pilha. Uma pilha de protocolos 
+mostra como os protocolos individuais são implementados.
+% subsection Conjunto de protocolos de rede(end)
+
+\subsection{Evolução do conjunto de protocolos} % (fold)
+\label{sub:Evolução do conjunto de protocolos}
+Uma suíte de protocolos é um grupo de protocolos que funciona em conjunto para fornecer
+serviços abrangentes de comunicação em redes. Os protocolos evoluíram e diversos 
+padrões foram desenvolvidos. 
+
+\begin{itemize}
+  \item \textbf{Internet Protocol Suite ou TCP/IP: } Este é o conjunto de protocolos mais comuns e relevantes usados nos dias de hoje, é um protocolo padrão aberto. 
+  \item \textbf{Protocolos de Interconexão de Sistemas Abertos(OSI): }É um conjunto de protocolos antigo que incluia um modelo de sete camadas. O modelo de referência categoriza as funções de seus protocolos. O OSI é conhecido principalmente por modelos em camadas, e ele foi amplamente substituído pelo TCP/IP. 
+  \item \textbf{AppleTalk: }Conjunto de protocolos proprietário da Apple
+  \item \textbf{Novell NetWare: }Conjunto de protocolos proprietários de curta direção e sistema operacional de rede desenvolvido em 1983.
+\end{itemize}
+% subsection Evolução do conjunto de protocolos (end)
+
+\subsection{Suíte de protocolos tcp/ip} % (fold)
+\label{sub:Suíte de protocolos tcp/ip}
+A suíte TCP/IP inclui dentro dele outros protocolos que 
+ajudam no desenvolvimento e funcionamento dessa suíte,
+e muitos deles se localizam nas camadas de internet e 
+alguns se localizam na camada de aplicação.
+
+\begin{itemize}
+  \item \textbf{Conjunto de protocolos de padrão aberto: }Está disponível gratuitamente ao público e pode ser usado por qualquer fornecedor em seu hardware ou software. 
+
+  \item \textbf{Conjunto de protocolos com base em padrões: }Isso significa que foi endossado pela indústria de rede e aprovado por uma organização de padrões. Isso garante que produtos diferentes interoperem.
+\end{itemize}
+
+Os protocolos possuem sua denominação e área de atuação, pois eles atuam em 
+modos específicos dentro da comunicação.
+
+% subsection Suíte de protocolos tcp/ip (end)
+
+\subsection{Processo de Comunicação} % (fold)
+\label{sub:Processo de Comunicação}
+
+O processo de comunicação dentro de servidores, é feito por meio de quadros ethernet. 
+esses quadros funcionam encapsulando dados do protocolo superior ou inferior, e 
+processamendo eles para que o quadro seguinte refaça o encapsulamento ou envio os dados. 
+Temos que esse processo é que os dados, são implementados dentro de um segmento TCP,
+e depois reencapsulado dentro de um pacote IP, que ao ter adicionado a si um 
+cabeçalho HTTP, pode em vias de fato virar um quadro ethernet. 
+% subsection Processo de Comunicação (end)
+
+
+\subsection{Modelos de Referência} % (fold)
+\label{sub:Modelos de Referência}
+O uso de um modelo padronizado em camadas, auxilia no entendimento de como a 
+comunicação em rede funciona. e o modelo em camadas ajuda a descrever protocolos e 
+operações de redes, que nos auxiliam no projeto de protocolos pois operam em uma 
+camada específica determinada. Fomenta a concorrência de produtos de diferentes 
+fornecedores e impede alteração de tecnologias ou capacidade. 
+
+\subsubsection{Modelo referência OSI} % (fold)
+\label{sec:Modelo referência OSI}
+O modelo OSI fornece uma extensa lista de funções e serviços que ocorrem em suas 
+camadas, e pelo fato dele ser mais modularizado que o modelo TCP/IP, eke possui mais 
+protocolos específicos. Esses protocolos descrevem oque deve ser feito, mas não a forma
+que deve ser, também descrevendo a forma de interação de cada camada com as camadas 
+vizinhas.
+
+\newpage
+
+\begin{center}
+  \begin{tabular}{| m{3cm} | m{7cm} |}
+  \hline
+  \textbf{Camada do Modelo OSI} & \textbf{Descrição} \\
+  \hline
+  7 - Aplicação & Contém os protocolos usados para processo a processo comunicativo. \\
+  \hline
+  6 - Apresentação & Fornece uma representação comum dos dados transferidos entre serviços da camada de aplicativo. \\ 
+  \hline
+  5 - Sessão & A camada de sessão fornece serviços para camada de apresentação para organizar o diálogo e gerenciar intercâmbio de dados. \\
+  \hline
+  4 - Transporte & A camada de transporte define serviços para segmentar, transferir e remontar dados para comunicações individuais entre os dispositivos finais. \\
+  \hline
+  3 - Rede & Fornece serviços para troca de partes individuais de dados dos quadros entre dispositivos finais. \\
+  \hline
+  2 - Enlace de Dados & Descrevem métodos para troca de dados entre dispositivos comuns.\\
+  \hline  
+  1 - Físico & Descrevem as partes físicas e processuaus para manter e desativar as conexões físicas para transmissão de bits \\
+
+ 
+\hline
+\end{tabular}
+\end{center}
+% subsubsection Modelo referência OSI (end)
+
+\subsubsection{Modelo de referência TCP/IP} % (fold)
+\label{sec:Modelo de referência TCP/IP}
+Ele diferente do modelo OSI, possui menos divisões, sendo somente 4 grade divisões. Ele
+foi craido nos anos 70 e corresponde à estrutura de um conjunto específico de protocolos
+ porque descreve as funções que ocorrem em cada camada por meio de protocolos delas. 
+
+\begin{center}
+\begin{tabular}{| m{3cm} | m{7cm} |}
+
+  \hline
+  \textbf{Camda do modelo TCP/IP} & \textbf{Descrição} \\
+  \hline  
+  4 - Aplicação & Representa dados para o usuário, além do controle de codificação e do diálogo \\
+  \hline
+  3 - Transporte & Permite a comunicação entre vparios dispositivos diferentes em redes distintas.\\
+  \hline
+  2 - Internet & Determina o melhor caminho pela rede\\
+  \hline
+  1 - Acesso à rede & Controla os dispositivos de hardware e os meios físicos que formam a rede.\\
+
+  \hline
+\end{tabular}
+\end{center}
+% subsubsection Modelo de referência TCP/IP (end)
+% subsection Modelos de Referência (end)
+
+\subsection{Encapsulamento de Dados} % (fold)
+\label{sub:Encapsulamento de Dados}
+\subsubsection{Segmentando Mensagens} % (fold)
+\label{sec:Segmentando Mensagens}
+Em teoria, uma únia comunicação poderia ser enviada através de uma rede por meio de um 
+fluxo maciço de bits. No entanto, isso criaria problemas comunicativos entre os 
+dispositivos conectados nessa rede que precisassem usar os mesmo canais comunicativos, 
+resultando em atrasos consideráveis de comunicação. Por isso, as mensagens são 
+dividias em pequenos pacotes que são mais fáceis de serem gerenciáveis pela rede. 
+Segmentação é o processo de dividir um fluxo de dados em unidades menores pra 
+transmissão. Ela é necessária porque as redes de dados usam o conjunto de protocolos 
+TCP/IP para enviar dados em pacotes IP individuais. Isso promove duas coisas, 
+\textbf{aumento de velocidade de transmissão de dados} e \textbf{aumento de eficiência}.
+
+Esses dois elementos permitem a \textbf{multiplexação}, que é quando duas conversas 
+diferentes são intercaladas e gerenciadas na rede ao mesmo tempo.
+% subsubsection Segmentando Mensagens (end)
+
+\subsubsection{Sequenciamento} % (fold)
+\label{sec:Sequenciamento}
+Na comunicação em rede, cada segmento de mensagem deve passar por um processo 
+semelhante para garantir que chege ao destino correto e possa ser remontado no 
+conteúdo da mensagem original. Para isso, temos que o sequenciamento de pacotes
+é feito para que a ordem de entrega seja feita de maneira correta, e caso algum 
+pacote seja perdido, pode ser identificado e recuperado.
+% subsubsection Sequenciamento (end)
+% subsection Encapsulamento de Dados (end)
+
+
+\subsection{Acesso a dados} % (fold)
+\label{sub: Acesso a dados}
+As camada de rede e de enlace de ados são responsáveis por entregar os dados do 
+dispositivo origem para o dispositivo de destino. Ois protocolos nas duas camadas 
+contêm um endereço de origem e de destino, mas seus endereços têm finalidades 
+diferentes:
+
+\begin{itemize}
+  \item \textbf{Endereços de origem e destino da camada de rede: } Responsável por entregar o pacote IP da origem original ao destino final.
+  \item \textbf{Endereços de origem e destino na camada de enlace de dados: } Responsável por fornecer o quadro de enlace de dados de uma palca de interface de rede para outra na mesma rede.
+\end{itemize}
+
+\subsubsection{Endereço Lógico da Camada 3} % (fold)
+\label{sec:Endereço Lógico da Camada 3}
+Um endereço IP é o endereço lógico da camada de rede, usando para entregar o pacote IP 
+da origem original ao destino final. O pacote Ip contém o endereço IP de origem e de 
+destino do pacote. Ele também contém dentro de si, um endereço IP com duas partes, sendo elas: 
+
+\begin{itemize}
+  \item \textbf{Parte da rede (IPv4) ou Prefixo(IPv6): }A parte mais à esquerda do endereço que indica qual rede o endereço IP é membro, Todos os dispositivos na mesma rede terão a mesma parte da rede.
+  \item \textbf{Parte do host (IPv4) ou ID da interface (IPv6): } A parte restante do endereço que identifica um dispositivo específico na rede. É uma parte exclusiva para cada dispositivo ou na interface na rede.
+\end{itemize}
+
+
+
+% subsubsection Endereço Lógico da Camada 3 (end)
+
+% subsection Acesso a dados (end)
 
 
 
 
-% section Protocolos e Modelos (end)
+
+
+
+
+  
 
 
 \end{document}

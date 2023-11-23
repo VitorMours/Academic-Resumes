@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper]{paper}
+
+\author{João Vitor Rezende Moura}
+\institution{UNIT- Universidade Tiradentes}
+
+\begin{document}
+\section{Infográfico: Etapas do algoritmo de fluxo máximo} % (fold)
+\label{sec:Infográfico: Etapas do algoritmo de fluxo máximo}
+
+\subsection{Fluxo definido em zero} % (fold)
+\label{sub:Fluxo definido em zero}
+A primeira etapa é a definição do fluxo ao longo de cada aresta para 0, considerando-se 
+que não há nenhum fluxo nesse momento. Posteriormente, usa-se o algoritmo de busca de 
+caminhos, como o busca em largura, ou profundidade para encontrar um caminho P de s para 
+t que tenha capacidade disponível.
+% subsection Fluxo definido em zero (end)
+
+\subsection{Capacidade do caminho} % (fold)
+\label{sub:Capacidade do caminho}
+Para encontrar a capacidade desse caminho, é preciso olhar para todas as arestas e no 
+caminho subtrair seu fluxo de corrente de sua capacidade. Em seguida aumenta-se o fluxo 
+por emio das arestas no caminho P pelo valor de caminho(P). Repeteindo o processo até 
+que não tenha mais caminhos do início ao fim disponíveis.
+% subsection Capacidade do caminho (end)
+
+\subsection{Grafo residual} % (fold)
+\label{sub:Grafo residual}
+Basicamente, pega-se o grafo existente e atualizam-se as capacidades de todas as arestas
+regulares para a capacidade restante atual. Em seguida, adicionam-se bordas de volta 
+indicando a quantidade de fluxo atualmente passando por essa borda.
+% subsection Grafo residual (end)
+
+\subsection{Definição do algoritmo} % (fold)
+\label{sub:Definição do algoritmo}
+É a etapa em que se define o algoritmo a ser usado. O algoritmo mais comum referenciado
+é o algoritmo de \textbf{Ford-Fulkerson}, que também é conhecido como algoritmo dos 
+pseudocaminhos aumentadores.
+% subsection Definição do algoritmo (end)
+% section Infográfico: Etapas do algoritmo de fluxo máximo (end)
+\newpage
+
+\section{Livro: Teoria dos grafos e o fluxo máximo de redes} % (fold)
+\label{sec:Livro: Teoria dos grafos e o fluxo máximo de redes}
+Temos dentro da teoria dos grafos, que o \textbf{peso} é uma variável associada a 
+arestas, e que a partir dela podemos determinar a capacidade possível existentes de uma 
+determinada aresta. Já o fluxo máximo é definido como a quantidade máxima de fluxo que 
+a rede permite fluir da fonte para o coletor. 
+
+\subsection{Problema do fluxo máximo em redes} % (fold)
+\label{sub:Problema do fluxo máximo em redes}
+Um fluxo é definido por um grafo direconado envolvendo uma fonte e um consumidor e 
+vários outros nós conectados por arestas. Cada borda tem uma capacidade individual, assim
+o limite máximo de fluxo que a borda permite. 
+Um \textbf{dígrafo} com um valor inteiro \textit{c} definida em seu conjunto de arcos é 
+chamada de rede capacitada. Nessa rede temos a fonte, destino, e os intermediários. Um 
+fluxo na rede é uma função de valor inteiro definida em seu conjunto de arcos tal que 
+a soma dos fluxos ao longo de todos os aros direcionados ao vértice \textit{i} é a 
+entrada em \textit{i}, e a soma dos fluxos ao longo de todos os arcos direcionados ao 
+vértice \textit{i} é a saída de \textit{i}.
+
+
+
+
+% subsection Problema do fluxo máximo em redes (end)
+% section Livro: Teoria dos grafos e o fluxo máximo de redes (end)
+
+
+
+
+
+
+\end{document}
