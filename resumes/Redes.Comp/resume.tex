@@ -311,21 +311,272 @@ destino do pacote. Ele também contém dentro de si, um endereço IP com duas pa
   \item \textbf{Parte da rede (IPv4) ou Prefixo(IPv6): }A parte mais à esquerda do endereço que indica qual rede o endereço IP é membro, Todos os dispositivos na mesma rede terão a mesma parte da rede.
   \item \textbf{Parte do host (IPv4) ou ID da interface (IPv6): } A parte restante do endereço que identifica um dispositivo específico na rede. É uma parte exclusiva para cada dispositivo ou na interface na rede.
 \end{itemize}
-
-
-
 % subsubsection Endereço Lógico da Camada 3 (end)
 
+\subsubsection{Dispositivos na mesma rede} % (fold)
+\label{sec:Dispositivos na mesma rede}
+Quando temos dois dispositivos computacionais dentro de uma mesma rede, sua 
+comunicação tem como ideia, que parte do endereçamento da rede IPv4 de origem e 
+destino, possuem o mesmo endereçamento, como mostrado nos seguintes dados: 
+
+\begin{itemize}
+  \item \textbf{Endereço IPv4 origem: } Endereço IPv4 de origem é 192.168.1.110
+  \item \textbf{Endereço IPv4 destino: }O endereço IPv4 de recebimento do FTP é 192.168.1.9
+\end{itemize}
+
+Temos que na camada de rede e dentro do cabeçalho do endereçamento IP, temos as 
+informações que definem que estes dois dispositivos estão presentes dentro da 
+mesma rede. 
+
+\subsubsection{Função de endereço na camada de enlace na mesma rede} % (fold)
+\label{sec:Função de endereço na camada de enlace na mesma rede}
+Quando a origem e o destino do pacote IP estiverem na mesma rede, o quadro de enlace 
+de dados será enviado diretamente para o dispositivo receptor. Em uma rede Ethernet, 
+os endereços do link de dados são conhecidos como endereços MAC. Esses endereços são 
+embutidos fisicamente nas NIC Ethernet. 
+% subsubsection Função de endereço na camada de enlace na mesma rede (end)
+
+
+\subsubsection{Dispositivos em rede remota} % (fold)
+\label{sec:Dispositivos em rede remota}
+Quando tivemos elementos comunicativos em redes distintas, temos que os enedereço 
+IP de origem e de destinos representação hosts em redes diferentes. Isso é indicado 
+pela porção da rede dentro do endereço IP. 
+
+\begin{itemize}
+  \item \textbf{Endereço IPv4 origem: } Endereço do computador: 192.168.1.110
+  \item \textbf{Endereço IPv4 destino: } Endereço servidor web: 172.16.1.99
+\end{itemize}
+
+Para que haja a comunicação, temos o uso da camada de enlace de dados, que a partir 
+dela podemos por meio de dispositivos intermediários, acessar o host de destino,
+assim, os dados e o quadro Ethernet devem ser enviados primeiro ao roteador, que também 
+é conhecdo como \textbf{gateway padrão}. 
+
+Com os endereços de enlace de dados, temos que a camada 2 tem a finalidade de fornecer 
+o quadro de enlace de dados de uma interface de rede para outra na mesma rede.
+
+% subsubsection Dispositivos em rede remota (end)
+% subsubsection Dispositivos na mesma rede (end)
 % subsection Acesso a dados (end)
 
+\section{Camada Física} % (fold)
+\label{sec:Camada Física}
+\subsection{Características da camada física} % (fold)
+\label{sub:Características da camada física}
+Os padrões de comunicação da camda física abordam três áreas funcionais, que são: 
+
+\begin{itemize}
+  \item Componentes físicos
+  \item Codificação 
+  \item Sinalização
+\end{itemize}
+
+Os \textbf{componentes físicos} são os dispositivos de hardware eletrônico e conectores 
+que transmitem os sinais que representam os bits. Esses componentes como NICs, interfaces e conectores são especificados nos padrões associados à camada física.
+
+Por outro lado, a \textbf{codificação} é um método para converter um fluxo de bits 
+de dados em um código pré-definido. Os códigos são agrupamentos de bits usados para 
+fornecer um padrão previsível que pode ser reconhecido tanto pelo emissor quanto pelo 
+recemtpr. A codificação é o método ou o padrão usado para representar as informações 
+digitais. 
+
+Por fim, temos que a \textbf{sinalização} é a forma como a camada física gera sinais 
+elétricos ou ópticos, e até mesmo sem fio, que representam os valores de "1" e "0" no 
+meio físico. A maneira como os bits são representados é chamado de método de 
+sinalização. Os padrões da camada física devem definir que tipo de sinal representa 
+o pulso ligado e o pulso desligado.
+
+\subsubsection{Largura da Banda} % (fold)
+\label{sec:Largura da Banda}
+Meios físicos diferentes aceitam a transferência de bits a taxas diferentes. A 
+transferência de dados é geralmente discuta em termos de largura de banda, que é a capacidade no qual um meio pode transportar dados. A largura digital mede a quantidade de dados que podem fluir em um lugar para outro durante determiando tempo, esse valor normalmente é medido em kilobits, ou megabits por segundo.
+% subsubsection Largura da Banda (end)
+
+\subsubsection{Terminologia} % (fold)
+\label{sec:Terminologia}
+A \textbf{latência} se refere ao tempo necessário para que os dados viajem de um ponto 
+ao outro, isso incluindo seus atrasos. Em uma internet com vários segmentos. A taxa 
+de transferência não pode ser mais rápida que o link mais lento no cainho de origem 
+ao caminho de destino. Mesmo que todos ou a maioria dos segmentos tenham alta largura 
+de banda, será necessário apenas um segmento no caminho com baixa taxa de tranferência 
+para ciar um gargalo na taxa de trasferência total da rede. 
+
+\textbf{Taxa de transferência} é o nome dado a medida de bits que atravesa uma mídia 
+durante um período. A taxa de trnasferência normalmente é afetada, e costuma ser menor 
+que a máxima configura dentro da camada física devido a fatores como a quantidade de 
+tráfego, o tipo do mesmo, e a latência craida pelo número de dispositivos de rede 
+que são encontrados entre a origem e o destino. 
+% subsubsection Terminologia (end)
+
+\subsubsection{Características dos cabeamento de cobre} % (fold)
+\label{sec:Características dos cabeamento de cobre}
+O cabeamento de cobre é o tipo de conexão mais comum que existem no cabeamento de redes 
+hoje em dia pelo fato de ser barato e fácil de ser instalado. Um dos problema atrelado 
+ao seu uso, é o fato de ter uma distânci limitada pela interferência de sinal. 
+Os dados são repsentados por meio de pulsos elétricos. E com isso, temos que devido 
+à essa especificidade técnica, os dois tipos de interferências mais comuns de 
+ocorrerem dentro do usso dos cabos de cobre, são 
+
+\begin{itemize}
+  \item \textbf{Interferência eletromagnética (EMI) radiofrequência(RFI): } Podem distorcer ou corromper os sinais de dados que estão sendo transportados pela mídia de cobre. Possíveis fontes dessas itnerferências são dispositivos de ondas de rádio e eletromagnéticos.
+  \item \textbf{Diafonia: }É a pertubação causada pelos campos elétricos ou magnéticos de um sinal em um fio para o sinal em um fio adjacente. Nos circuitos de telefone, a diafoni pode fazer com que parte de outra conversa de voz de um circuito adjacente seja ouvida. Especificamente quando uma corrente elétrica flui através do cabo.
+\end{itemize}
+
+Alguns cabos possuem especificidades técnicas na sua construção que impede que esses 
+tipos de interferências possam ocorrer, como por exemplo, os 
+\textbf{cabos de par trançado (UTP)}, \textbf{cabo de par trançado blindado(STP)} e 
+\textbf{Cabo coaxial}.
+% subsubsection Características dos cabeamento de cobre (end)
+
+\subsubsection{Cabeamento UTP} % (fold)
+\label{sec:Cabeamento UTP}
+Quando usamos o UTP como meio de rede , o cabeamento 
+consiste em quatro pares de fios entrelaçados com cores 
+específicas de cada par, que são envoltos em um tubo de 
+plástico para proteção. 
+
+Pelo fato desse tipo de fio não usar blindagem em sua 
+construção, os projetistas encontraram outra maneira de 
+limitar a diafonia, e isso pode ser feito por meio de 
+duas técnicas: 
+
+\begin{itemize}
+  \item \textbf{Cancelamento: }Emparelham os fios em um circuto. Quando dois fios de um circutos são colocados próximos um ao outro, seus campos magnéticos serão opostos.
+  \item \textbf{Variando o número de torções: }Aumenta o efeit ode cancelamento de fios em circutos emparelhados, mas deve seguir especificações de quantas tranças são permitidas por metro.
+\end{itemize}
+
+% subsubsection Cabeamento UTP (end)
+
+\subsubsection{Padrões e Conectores de cabeamento UTP} % (fold)
+\label{sec:Padrões e Conectores de cabeamento UTP}
+O cabeamento possui alguns dos seus elementos definidos 
+por padrões para facilitar a forma como o manejamento e o 
+trabalho com eles é feito, pois padroniza os mecanismos e 
+a forma como se trabalha com eles. Alguns desses elementos 
+padronizados são: 
+
+\begin{itemize}
+  \item Tipos de cabos 
+  \item Comprimento do cabo 
+  \item Conectores 
+  \item Terminação do Cabo 
+  \item Métodos de teste do cabo
+\end{itemize}
+
+Existem divisões de categorias entre os cabos, cada uma 
+delas corresponde a quantidade de dados que podem ser 
+transferidos no cabo, sendo eles respectivamente: 
+
+\begin{itemize}
+  \item Categoria 5 -> 100Mbps e 1000Mbps
+  \item Categoria 6 -> 10Gbps
+  \item Categoria 7 -> 10Gbps 
+  \item Categoria 8 -> 40 Gbps 
+\end{itemize}
+
+O cabo por possuir essas esécificidades, possui também a 
+especificação da sua conecxão física, a mesma deve ser 
+feita por meio de conectores RJ-45, tanto os plugs como 
+os sockets do cabo.
+
+% subsubsection Padrões e Conectores de cabeamento UTP (end)
+
+\subsubsection{Cabeamento de fibra ótica} % (fold)
+\label{sec:Cabeamento de fibra ótica}
+O cabeamento de fibra ótica, consiste em uma fibra que 
+normalmente é feita de vidro, e que pode ser de dois tipos, 
+a de monomodo e a de multimodo.
+
+A fibra de \textbf{monomodo} consiste em um núcleo em que 
+um único fio de lux é enviado, e ele é mais usado para 
+longas distâncias. Por outro lado, a fibra de 
+\textbf{multimodo} possui um núcleo mais dilatado, e é 
+mais usado em curtas distâncias, por outro lado, diversos 
+feixes de luzes são enviados ao mesmo tempo.
+% subsubsection Cabeamento de fibra ótica (end)
+% subsection Características da camada física (end)
+% section Camada Física (end)
+\newpage
+\section{Camada de Enlace de Dados} % (fold)
+\label{sec:Camada de Enlace de Dados}
+A camada de enlace de dados prepara os dados da rede para 
+a rede física, além de também ser responsável pela placa de 
+interface da rede (NIC).
+Na camada de enlace, é que está presente as subcamadas de 
+\textbf{LLC} e de \textbf{MAC}. A camada MAC é de suma 
+importância pelo fato dela delimitar os quadros, definir 
+os endereçamentos, e detectar possíveis erros de transmissão
+
+\subsection{Topologias} % (fold)
+\label{sub:Topologias}
+A topologia de um rede é a organização ou relacionamento, 
+dos dispositivos de rede e as interconexões entre eles. 
+Existem dois tipos de topologias usadas para descrever 
+as redes: 
+
+A topologia \textbf{física} identifica as conexões físicas 
+e a forma como os dispositivos finais e intermediários são 
+interconectados. A topologia também pode incluir a 
+localização específica do dispositivo, como o número do rack 
+e o número do equipamento. Por outro lado, a topologia 
+\textbf{lógica} refere-se à maneira como uma rede transfere
+quandros de um nó para o próximo. Eta topologia identifica 
+conexões virtuais usando interfaces de dispositivos e 
+esquemas de endereçamento IP. As principais topologias 
+podem ser dividas entre as topologias focadas em WAN e 
+outras para LAN, sendo elas: 
+
+\begin{itemize}
+  \item WAN
+  \begin{itemize}
+    \item Ponto a Ponto
+    \item Estrela 
+    \item Malha
+  \end{itemize}
+  \item LAN 
+  \begin{itemize}
+    \item Barramento
+    \item Anel
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Formas de comunicação} % (fold)
+\label{sec:Formas de comunicação}
+A comunicação pode ser feita de duas forma, que são chamadas 
+half-duplex ou full-duplex. A comunicação \textbf{half-duplex} é feita por ambos dispositivos, e pode transmitir e 
+receber dados, mas isso não pode ser feito de forma 
+simultânea. Ele permite que apenas um dispositivo envia ou 
+receba por vez na mídia compartilhada. Por outro lado, 
+a comunicação \textbf{full-duplex} permite a transmissão e 
+o envio simultâneo de dados. 
+
+\subsubsection{Métodos de controle de acesso} % (fold)
+\label{sec:Métodos de controle de acesso}
+São exemplos de redes de multiacesso, as redes LAN e WAN. 
+Esse tipo de rede pode ter dois ou mais dispositivos finais 
+tentando acessar a rede simultaneamente. Existem dois  
+métodos básicos de controle de acesso para para meio físico 
+compartilhado. 
+
+\begin{itemize}
+  \item Acesso baseado em contenção 
+  \item Acesso controlado.
+\end{itemize}  
 
 
 
 
 
 
+% subsubsection Métodos de controle de acesso (end)
 
-  
+
+% subsection Topologias (end)
 
 
+
+
+
+% section Camada de Enlace de Dados (end)
 \end{document}

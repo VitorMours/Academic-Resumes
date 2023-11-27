@@ -1,11 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1700927428 "resume.tex" "resume.pdf" "resume" 1700927433
+["pdflatex"] 1701091380 "resume.tex" "resume.pdf" "resume" 1701091382
   "/etc/texmf/web2c/texmf.cnf" 1698456357 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss9.tfm" 1136768653 1320 49357c421c0d469f88b867dd0c3d10e8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm" 1136768653 1272 e2d13f0df30bf3ad990bb9d028e37f34 ""
@@ -23,8 +22,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1698590515 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1698590620 2798568 a3175bd43476146437ba3f929f7c8434 ""
-  "resume.aux" 1700927432 6594 0302a67921abb32c1414031a42a6b077 "pdflatex"
-  "resume.tex" 1700927421 30073 e7eeacc4aaa47b9b57ef796edc887ee2 ""
+  "resume.aux" 1701091382 2030 a3d83629693bd6d151454cc652c3f805 "pdflatex"
+  "resume.tex" 1701091376 8102 96ef88502ebd7f0db72fcd58b601f9fa ""
   (generated)
   "resume.aux"
   "resume.log"
