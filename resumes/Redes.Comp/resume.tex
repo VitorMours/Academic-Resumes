@@ -563,18 +563,53 @@ compartilhado.
   \item Acesso baseado em contenção 
   \item Acesso controlado.
 \end{itemize}  
-
-
-
-
-
-
 % subsubsection Métodos de controle de acesso (end)
+Em uma rede de multiacesso controlada, cada nó tem seu 
+próprio tempo para usar o meio. Eses tipos determinísticos 
+de redes herdadas são ineficientes porque um dispositivo 
+deve aguardar sua vez para acessar o meio. Exemplos de 
+redes multiacesso que usam esses controles são os de 
+aneis de token legados e ARCNET.
 
+\subsubsection{Acesso baseado em contenção - CSMA} % (fold)
+\label{sec:Acesso baseado em contenção - CSMA}
+Tipos de redes que possuem esse tipo de acesso, são 
+redes como Lan sem fio, Lan ethernet na topologia de 
+barramento legado e LANs Etherhet herdadas usando hub. 
 
+Essas redes costumam operar no modo half-duplex, oque 
+significa que apenas um dispositivo pode enviar ou receber
+de cada vez. 
+% subsubsection Acesso baseado em contenção - CSMA (end)
 % subsection Topologias (end)
 
+\subsection{Quadro de enlace de dados} % (fold)
+\label{sub:Quadro de enlace de dados}
+A camada de link de dados prepara os dados encapsulados para
+o transporte pela mídia local, encapsulando-o com um 
+cabeçalho e um trailer para criar um quadro. O protocolo de 
+link de dados é responsável pelas comunicações de NIC para 
+NIC dentro da mesma rede. Embora existam muitos protocolos
+de camada de enalce de dados diferentes que descrevem os 
+quadros de caamda de enlace de dados. Cada quadro costuma 
+ter: 
 
+\begin{itemize}
+  \item Cabeçalho
+  \item Dados
+  \item Trailer
+\end{itemize}
+
+Ao contrário de outros protocolos de encapsulamento, a 
+camada de link de dados acrescenta informações na forma 
+de um trailer no final do quadro. Todos os protocolos 
+da camada de enlace de dados encapsulam os dados dentro do
+campo de dados do quadro. A estrutura do quadro e os 
+os campos contidos no cabeçalho e trailer variam de 
+acordo com o protocolo
+
+Não há
+% subsection Qadro de enlace de dados(end)
 
 
 
